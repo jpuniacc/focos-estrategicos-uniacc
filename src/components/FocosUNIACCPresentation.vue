@@ -14,7 +14,8 @@ const currentSlideIndex = ref(0)
 
 const slides = [
   {
-    title: "Focos Estratégicos UNIACC",
+    
+    title: "Focos Estratégicos Dirección de Transformación Digital e Innovación",
     subtitle: "Marco para evaluación de iniciativas institucionales",
     isTitle: true
   },
@@ -164,6 +165,7 @@ const prevSlide = () => {
         
         <!-- Slide de Portada -->
         <div v-if="currentSlide.isTitle" class="text-center space-y-6">
+          <img src="/logo_uniacc.svg" alt="UNIACC" class="w-40 h-40 mx-auto mb-4" />
           <h1 class="text-5xl font-bold text-slate-800 mb-4">
             {{ currentSlide.title }}
           </h1>
