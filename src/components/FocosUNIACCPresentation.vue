@@ -159,38 +159,38 @@ const prevSlide = () => {
 </script>
 
 <template>
-  <div class="w-full h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex flex-col">
-    <div class="flex-1 flex items-center justify-center p-8">
-      <div class="w-full max-w-5xl bg-white rounded-lg shadow-2xl p-12">
+  <div class="w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex flex-col">
+    <div class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div class="w-full max-w-5xl bg-white rounded-lg shadow-2xl p-4 sm:p-6 lg:p-12">
         
         <!-- Slide de Portada -->
         <div v-if="currentSlide.isTitle" class="text-center space-y-6">
-          <img src="/logo_uniacc.svg" alt="UNIACC" class="w-40 h-40 mx-auto mb-4" />
-          <h1 class="text-5xl font-bold text-slate-800 mb-4">
+          <img src="/logo_uniacc.svg" alt="UNIACC" class="w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4" />
+          <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
             {{ currentSlide.title }}
           </h1>
-          <p class="text-2xl text-slate-600">
+          <p class="text-lg sm:text-xl lg:text-2xl text-slate-600">
             {{ currentSlide.subtitle }}
           </p>
-          <div class="mt-12 grid grid-cols-3 gap-6">
-            <div class="col-span-3 bg-amber-50 p-6 rounded-lg border-2 border-amber-400">
+          <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div class="col-span-1 sm:col-span-3 bg-amber-50 p-4 sm:p-6 rounded-lg border-2 border-amber-400">
               <Award class="w-12 h-12 text-amber-600 mx-auto mb-3" />
               <p class="font-bold text-amber-900 text-lg">Meta: Acreditación 2026</p>
               <p class="text-sm text-amber-700">Objetivo institucional prioritario</p>
             </div>
-            <div class="bg-blue-50 p-6 rounded-lg">
+            <div class="bg-blue-50 p-4 sm:p-6 rounded-lg">
               <Users class="w-12 h-12 text-blue-600 mx-auto mb-3" />
               <p class="font-semibold text-blue-900">Matrícula</p>
             </div>
-            <div class="bg-green-50 p-6 rounded-lg">
+            <div class="bg-green-50 p-4 sm:p-6 rounded-lg">
               <RefreshCw class="w-12 h-12 text-green-600 mx-auto mb-3" />
               <p class="font-semibold text-green-900">Rematrícula</p>
             </div>
-            <div class="bg-orange-50 p-6 rounded-lg">
+            <div class="bg-orange-50 p-4 sm:p-6 rounded-lg">
               <TrendingDown class="w-12 h-12 text-orange-600 mx-auto mb-3" />
               <p class="font-semibold text-orange-900">Disminuir Deserción</p>
             </div>
-            <div class="col-span-3 bg-purple-50 p-6 rounded-lg">
+            <div class="col-span-1 sm:col-span-3 bg-purple-50 p-4 sm:p-6 rounded-lg">
               <Heart class="w-12 h-12 text-purple-600 mx-auto mb-3" />
               <p class="font-semibold text-purple-900">El Alumno en el Centro</p>
               <p class="text-sm text-purple-700">Núcleo transversal</p>
@@ -218,12 +218,12 @@ const prevSlide = () => {
             </div>
           </div>
 
-          <h3 class="text-2xl font-bold text-slate-800 text-center mb-4">Focos Estratégicos - Ciclo de Vida del Estudiante</h3>
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 text-center mb-4">Focos Estratégicos - Ciclo de Vida del Estudiante</h3>
 
-          <!-- Grid de 3 columnas -->
-          <div class="grid grid-cols-12 gap-3">
+          <!-- Grid responsive -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-3">
             <!-- Columna 1: Matrícula -->
-            <div class="col-span-3">
+            <div class="lg:col-span-3">
               <div class="bg-blue-50 border-3 border-blue-500 rounded-xl p-3 h-full">
                 <div class="flex items-center gap-2 mb-3">
                   <div class="bg-blue-600 p-2 rounded-lg">
@@ -260,7 +260,7 @@ const prevSlide = () => {
             </div>
 
             <!-- Columna 2: Alumno en el Centro -->
-            <div class="col-span-6 flex flex-col justify-center">
+            <div class="lg:col-span-6 flex flex-col justify-center mt-3 lg:mt-0">
               <div class="bg-purple-100 border-3 border-purple-600 rounded-xl p-4 mb-3 relative">
                 <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">
                   ⭐ NÚCLEO ESTRATÉGICO
@@ -315,7 +315,7 @@ const prevSlide = () => {
             </div>
 
             <!-- Columna 3: Rematrícula y Retención -->
-            <div class="col-span-3 flex flex-col gap-3">
+            <div class="lg:col-span-3 flex flex-col gap-3 mt-3 lg:mt-0">
               <!-- Rematrícula -->
               <div class="bg-green-50 border-3 border-green-500 rounded-xl p-3">
                 <div class="flex items-center gap-2 mb-2">
@@ -390,7 +390,7 @@ const prevSlide = () => {
 
         <!-- Slide de Interrelación -->
         <div v-if="currentSlide.isInterrelation" class="space-y-6">
-          <h2 class="text-4xl font-bold text-slate-800 mb-8">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
             {{ currentSlide.title }}
           </h2>
           
@@ -427,7 +427,7 @@ const prevSlide = () => {
             <div :class="[currentSlide.color, 'p-3 rounded-lg']">
               <component :is="currentSlide.icon" class="w-10 h-10 text-white" />
             </div>
-            <h2 class="text-4xl font-bold text-slate-800">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800">
               {{ currentSlide.title }}
             </h2>
           </div>
@@ -477,22 +477,22 @@ const prevSlide = () => {
     </div>
 
     <!-- Navegación -->
-    <div class="bg-slate-800 p-4 flex items-center justify-between">
+    <div class="bg-slate-800 p-2 sm:p-4 flex items-center justify-between">
       <button
         @click="prevSlide"
-        class="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition"
+        class="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition text-sm sm:text-base"
       >
-        <ChevronLeft class="w-5 h-5" />
-        Anterior
+        <ChevronLeft class="w-4 h-4 sm:w-5 sm:h-5" />
+        <span class="hidden sm:inline">Anterior</span>
       </button>
 
-      <div class="flex gap-2">
+      <div class="flex gap-1 sm:gap-2">
         <button
           v-for="(slide, idx) in slides"
           :key="idx"
           @click="currentSlideIndex = idx"
           :class="[
-            'w-3 h-3 rounded-full transition',
+            'w-2 h-2 sm:w-3 sm:h-3 rounded-full transition',
             idx === currentSlideIndex ? 'bg-white' : 'bg-slate-600'
           ]"
         />
@@ -500,10 +500,10 @@ const prevSlide = () => {
 
       <button
         @click="nextSlide"
-        class="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition"
+        class="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition text-sm sm:text-base"
       >
-        Siguiente
-        <ChevronRight class="w-5 h-5" />
+        <span class="hidden sm:inline">Siguiente</span>
+        <ChevronRight class="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
     </div>
   </div>
